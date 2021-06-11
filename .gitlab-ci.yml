@@ -27,7 +27,7 @@ install:
   stage: install
   image: alpine/git
   script:
-    - git --version
+    - git --help
 
 publish:
   stage: release
