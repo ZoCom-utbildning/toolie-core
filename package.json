@@ -1,5 +1,5 @@
 {
-  "name": "toolie-core",
+  "name": "@internal-projects/toolie-core",
   "version": "1.0.0",
   "description": "Toolie Core library for Toolie.se",
   "main": "dist/index.js",
@@ -15,9 +15,22 @@
     "toolie",
     "webapps"
   ],
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [ "dist/**" ],
   "author": "Johan Kivi",
   "license": "ISC",
   "dependencies": {
     "nanoid": "^3.1.23"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/gitlab": "^6.1.0",
+    "@semantic-release/npm": "^7.1.3",
+    "semantic-release": "^17.4.3"
   }
 }
