@@ -1,11 +1,11 @@
-import type { Group } from '../types/index';
+import type { Group, Member } from '../types/index';
 
 const key: string = 'toolie';
 let storage: string | null = localStorage.getItem(key);
 
 export default class GroupPersistance {
 
-    create(members: Array<String>, name: String) {
+    create(members: Array<Member>, name: String) {
         
         const id = (storage) ? JSON.parse(storage).length : 0; // if no groups id = 0
         const newGroup: Group = { id: id, name: name, members: members };
@@ -30,7 +30,7 @@ export default class GroupPersistance {
         }
     }
 
-    delete(groupId: number) {
+    delete(groupId: string){
 
         let groups: string | null = localStorage.getItem(key); 
         

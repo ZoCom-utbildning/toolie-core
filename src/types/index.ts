@@ -1,4 +1,5 @@
 export declare interface CreatedGroup {
+    id: string,
     members: Array<string>,
     leaderIndex: number,
     name: string,
@@ -6,11 +7,14 @@ export declare interface CreatedGroup {
 }
 
 export declare interface Group {
-    id: number,
-    members: String[],
+    id: string,
+    members: Member[],
     name: String
 }
 
+export declare interface Member {
+    name: String
+}
 
 export enum GroupCreationStrategy {
     BY_AMOUNT,
