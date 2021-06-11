@@ -24,7 +24,6 @@ stages:
 
 publish:
   stage: release
-  image: alpine/git
   script:
     - npm run semantic-release
   rules:
