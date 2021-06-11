@@ -5,20 +5,20 @@ let storage: string | null = localStorage.getItem(key);
 
 export default class GroupPersistance {
 
-    create(members: String[], name: String) {
+    create(members: Array<String>, name: String) {
         
         const id = (storage) ? JSON.parse(storage).length : 0; // if no groups id = 0
         const newGroup: Group = { id: id, name: name, members: members };
         
         if(storage){
-            let parsedStorage: object[] = JSON.parse(storage);
+            let parsedStorage: Array<object> = JSON.parse(storage);
             localStorage.setItem(key, JSON.stringify(parsedStorage.push(newGroup)));
         } else {
             localStorage.setItem(key, JSON.stringify([newGroup]));
         }
     }
 
-    read(): Group[] | null {
+    read(): Array<Group> | null {
 
         let groups: string | null = localStorage.getItem(key); 
 
@@ -30,7 +30,7 @@ export default class GroupPersistance {
         }
     }
 
-    delete(groupId: number){
+    delete(groupId: number) {
 
         let groups: string | null = localStorage.getItem(key); 
         
