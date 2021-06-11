@@ -20,17 +20,15 @@ variables:
   NPM_TOKEN: ${CI_JOB_TOKEN}
 
 stages:
-  - install-git
+  - install
   - release
 
-install-git:
-  stage: install-git
+install:
+  stage: install
   image: alpine/git
 
 publish:
   stage: release
-  dependencies:
-    - install-git
   script:
     - npm run semantic-release
   rules:
