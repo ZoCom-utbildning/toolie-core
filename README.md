@@ -3,7 +3,7 @@
 ## Arkitektur
 
 - Toolie
-    - GroupManagement
+    - GroupPersistance
         - Create
             - LocalStorage
         - Read
