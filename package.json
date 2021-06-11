@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc"
+    "start": "tsc",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -15,9 +16,6 @@
     "toolie",
     "webapps"
   ],
-  "scripts": {
-    "semantic-release": "semantic-release"
-  },
   "publishConfig": {
     "access": "public"
   },
