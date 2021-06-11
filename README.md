@@ -1,0 +1,45 @@
+# toolie
+
+## Arkitektur
+
+- Toolie
+    - GroupManagement
+        - Create
+            - LocalStorage
+        - Read
+        - Update
+        - Delete
+    - Apps
+        - Groupie
+            - input
+                - slumpa en gruppledare
+                - kickass gruppnamn
+                - gruppStrategi ( mem/grupp, antal grupper )
+                - Hamna ej i samma grupp
+            - output
+                - slumpa namn inom grupp
+                - flytta gruppmedlemmar mellan grupper
+                - Ta bort medlemmar
+                - UI hjälp - såhär funkar det
+                - Skapa tomma grupper
+                - Blanda grupper
+                - Tvärgrupper
+                - Screenshot
+                - Ev spara grupper på annat sätt?
+        - Selfie
+            - input
+                - exkludera draget namn
+                - visa dragna namn
+                - templates
+                    - slot machine
+                    - drop from above
+                    - outline animation ( anime.js )
+                    - spinning wheel ( anime? )
+                    - surprise me
+            - output
+                - visa dragna namn
+                - fjärrkontroll ( via ex. mobilen )           
+        - Helpie
+        - Attendie
+            - checkIn
+            - checkOut

@@ -1,0 +1,16 @@
+{
+  "name": "toolie-core",
+  "version": "1.0.0",
+  "description": "Toolie Core library for Toolie.se",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://code.zocom.io/internal-projects/toolie-core"
+  },
+  "keywords": ["toolie", "webapps"],
+  "author": "Johan Kivi",
+  "license": "ISC"
+}
