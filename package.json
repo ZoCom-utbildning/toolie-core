@@ -19,7 +19,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [ "dist/**" ],
+  "files": [
+    "dist/**"
+  ],
   "author": "Johan Kivi",
   "license": "ISC",
   "dependencies": {
