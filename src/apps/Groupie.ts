@@ -31,7 +31,7 @@ export default class Groupie {
         id: nanoid(),
         members:[], 
         leaderIndex: -1,
-        name: `Group ${groups.length+1}`,
+        name: `Grupp ${groups.length+1}`,
         pickedMember: ""      
       })
     }
@@ -103,10 +103,9 @@ export default class Groupie {
     }
 
     this.generateNames()
-/*
+
     if(this.config.enableLeader){
-      this.groups.forEach(group => group.leaderIndex = group.members.randomIndex() )
+      this.groups.forEach(group => group.leaderIndex = Math.floor(Math.random()*group.members.length))
     }
-*/
   }
 }

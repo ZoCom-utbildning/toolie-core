@@ -23,9 +23,9 @@ export default class GroupPersistance {
         let groups: string | null = localStorage.getItem(key); 
 
         if(groups){
-            return JSON.parse(groups)
+            return JSON.parse(groups);
         } else {
-            console.log('No groups found in localStorage.')
+            console.log('No groups found in localStorage.');
             return null;
         }
     }
