@@ -71,7 +71,8 @@ export default class Groupie {
       for(const group of this.groups){        
         group.name = `${prefixes.pop()} ${suffixes.pop()}`
       }
-    }else{
+    }
+    else {
       for(let i = 0; i < this.groups.length; i++){
         const group = this.groups[i]
         group.name = `Grupp ${i+1}`
