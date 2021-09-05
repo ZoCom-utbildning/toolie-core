@@ -88,8 +88,21 @@ export default class Groupie {
     this.config = config
     
     const numGroups = Math.floor( this.everyone.length / this.config.groupSize )    
-    
-    this.everyone = shuffle(this.everyone);
+
+    const shuffled: Array<string> = [...shuffle(this.everyone)];
+
+    // handle separation
+    const sorted: Array<string> = [];
+
+    shuffled.forEach(member => {
+      if(member.includes('   ')){
+        sorted.unshift(member.trim())
+      } else {
+        sorted.push(member)
+      }
+    })
+
+    this.everyone = sorted;
 
     this.groups = this.getEmptyGroups(numGroups)
 
