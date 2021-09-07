@@ -13,6 +13,7 @@ export default class GroupPersistance {
         if(storage){
             let parsedStorage: Array<object> = JSON.parse(storage);
             localStorage.setItem(key, JSON.stringify(parsedStorage.push(newGroup)));
+
         } else {
             localStorage.setItem(key, JSON.stringify([newGroup]));
         }
