@@ -18,7 +18,7 @@ export default class Groupie {
                 id: nanoid(),
                 members: [],
                 leaderIndex: -1,
-                name: `Group ${groups.length + 1}`,
+                name: `Grupp ${groups.length + 1}`,
                 pickedMember: ""
             });
         }
@@ -70,7 +70,18 @@ export default class Groupie {
     createGroups(config) {
         this.config = config;
         const numGroups = Math.floor(this.everyone.length / this.config.groupSize);
-        this.everyone = shuffle(this.everyone);
+        const shuffled = [...shuffle(this.everyone)];
+        // handle separation
+        const sorted = [];
+        shuffled.forEach(member => {
+            if (member.includes('   ')) {
+                sorted.unshift(member.trim());
+            }
+            else {
+                sorted.push(member);
+            }
+        });
+        this.everyone = sorted;
         this.groups = this.getEmptyGroups(numGroups);
         // distribute everyone over groups
         for (let i = 0; i < this.everyone.length; i++) {
@@ -80,11 +91,9 @@ export default class Groupie {
             group.members.push(user);
         }
         this.generateNames();
-        /*
-            if(this.config.enableLeader){
-              this.groups.forEach(group => group.leaderIndex = group.members.randomIndex() )
-            }
-        */
+        if (this.config.enableLeader) {
+            this.groups.forEach(group => group.leaderIndex = Math.floor(Math.random() * group.members.length));
+        }
     }
 }
 Groupie.PREFIXES = ["Super", "Ninja", "Bunny", "Robo", "Ultra", "Power", "Speedy", "Crazy", "Bionic", "Space", "Ghost", "Kung-Fu", "Happy", "Smooth", "Fire", "Smart", "Poop", "Mega", "Mad", "Majestic", "Mighty", "Cool", "Diamond", "Fabulous", "Fantastic", "Furious", "Golden", "Silver", "Iron", "Magic", "Ruby", "Pink", "Crypto", "War", "Spicy", "Curly"];

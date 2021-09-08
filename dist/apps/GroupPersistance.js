@@ -1,12 +1,13 @@
 const key = 'toolie';
-let storage = localStorage.getItem(key);
 export default class GroupPersistance {
     create(members, name) {
+        let storage = localStorage.getItem(key);
         const id = (storage) ? JSON.parse(storage).length : 0; // if no groups id = 0
         const newGroup = { id: id, name: name, members: members };
         if (storage) {
             let parsedStorage = JSON.parse(storage);
-            localStorage.setItem(key, JSON.stringify(parsedStorage.push(newGroup)));
+            parsedStorage.push(newGroup);
+            localStorage.setItem(key, JSON.stringify(parsedStorage));
         }
         else {
             localStorage.setItem(key, JSON.stringify([newGroup]));
