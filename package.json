@@ -1,6 +1,6 @@
 {
   "name": "@internal-projects/toolie-core",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Toolie Core library for Toolie.se",
   "main": "dist/index.js",
   "scripts": {
