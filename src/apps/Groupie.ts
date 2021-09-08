@@ -118,6 +118,8 @@ export default class Groupie {
 
     this.generateNames()
 
+    this.groups.map(group => shuffle(group.members))
+
     if(this.config.enableLeader){
       this.groups.forEach(group => group.leaderIndex = Math.floor(Math.random()*group.members.length))
     }
