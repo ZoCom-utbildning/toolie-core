@@ -1,18 +1,19 @@
 import type { Group, Member } from '../types/index';
 
 const key: string = 'toolie';
-let storage: string | null = localStorage.getItem(key);
 
 export default class GroupPersistance {
-
+    
     create(members: Array<Member>, name: String) {
         
+        let storage: string | null = localStorage.getItem(key);
         const id = (storage) ? JSON.parse(storage).length : 0; // if no groups id = 0
         const newGroup: Group = { id: id, name: name, members: members };
         
         if(storage){
             let parsedStorage: Array<object> = JSON.parse(storage);
-            localStorage.setItem(key, JSON.stringify(parsedStorage.push(newGroup)));
+            parsedStorage.push(newGroup);
+            localStorage.setItem(key, JSON.stringify(parsedStorage));
 
         } else {
             localStorage.setItem(key, JSON.stringify([newGroup]));
