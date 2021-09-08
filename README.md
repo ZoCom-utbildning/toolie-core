@@ -49,11 +49,14 @@ För att installera som en npm-modul behöver du en personal access token vilket
 
 Öppna upp din terminal och skriv in följande kommandon.
 
-`echo @internal-projects:registry=https://code.zocom.io/api/v4/packages/npm/ >> ~/.npmrc`
+```
+echo @internal-projects:registry=https://code.zocom.io/api/v4/packages/npm/ >> ~/.npmrc
 
-`npm config set @internal-projects:registry https://code.zocom.io/api/v4/projects/161/packages/npm/`
+npm config set @internal-projects:registry https://code.zocom.io/api/v4/projects/161/packages/npm/
+```
 
 Här ska du ersätta `"<your_token>"` med din token du skapade tidigare.
+
 `npm config set -- '//code.zocom.io/api/v4/projects/161/packages/npm/:_authToken' "<your_token>"`
 
 Till sist installera toolie-core som en npm-modul i ditt projekt.
