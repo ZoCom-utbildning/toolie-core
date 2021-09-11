@@ -1,31 +1,32 @@
 import { nanoid } from 'nanoid';
 import { shuffle } from './../utils/index';
 export default class Selfie {
-    constructor() {
+    constructor(everyone) {
         this.pickedNames = [];
         this.toBeExcluded = {};
-        this.roster = [];
+        this.everyone = [];
         this.config = {
             showPickedName: false,
             excludeName: false,
             namePicker: 'slotmachine'
         };
+        this.everyone = everyone;
     }
     shuffle(roster) {
         roster.map(name => {
             return { name: name, id: nanoid(3) };
         });
-        this.roster = shuffle(roster);
-        return this.roster;
+        this.everyone = shuffle(roster);
+        return this.everyone;
     }
     pickName() {
-        if (this.config.excludeName && this.roster.length) {
-            let idx = this.roster.findIndex(name => name = this.toBeExcluded);
-            this.roster.splice(idx, 1);
+        if (this.config.excludeName && this.everyone.length) {
+            let idx = this.everyone.findIndex(name => name = this.toBeExcluded);
+            this.everyone.splice(idx, 1);
         }
         ;
-        let randomIndex = Math.floor(Math.random() * this.roster.length);
-        let pickedMember = this.roster[randomIndex];
+        let randomIndex = Math.floor(Math.random() * this.everyone.length);
+        let pickedMember = this.everyone[randomIndex];
         if (this.config.showPickedName) {
             this.pickedNames.push(pickedMember);
         }
@@ -33,7 +34,7 @@ export default class Selfie {
             this.toBeExcluded = pickedMember;
         }
         ;
-        return this.roster[randomIndex];
+        return this.everyone[randomIndex];
     }
 }
 //# sourceMappingURL=Selfie.js.map
