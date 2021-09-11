@@ -1,8 +1,9 @@
+import { nanoid } from 'nanoid';
 const key = 'toolie';
 export default class GroupPersistance {
     create(members, name) {
         let storage = localStorage.getItem(key);
-        const id = (storage) ? JSON.parse(storage).length : 0; // if no groups id = 0
+        const id = nanoid(5);
         const newGroup = { id: id, name: name, members: members };
         if (storage) {
             let parsedStorage = JSON.parse(storage);
