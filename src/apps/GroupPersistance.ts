@@ -1,5 +1,5 @@
 import type { Group, Member } from '../types/index';
-
+import { nanoid } from 'nanoid';
 const key: string = 'toolie';
 
 export default class GroupPersistance {
@@ -7,7 +7,7 @@ export default class GroupPersistance {
     create(members: Array<Member>, name: String) {
         
         let storage: string | null = localStorage.getItem(key);
-        const id = (storage) ? JSON.parse(storage).length : 0; // if no groups id = 0
+        const id = nanoid(5);
         const newGroup: Group = { id: id, name: name, members: members };
         
         if(storage){
