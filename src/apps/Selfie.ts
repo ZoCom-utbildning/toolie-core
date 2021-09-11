@@ -24,11 +24,15 @@ export default class Selfie {
     }
 
     shuffle(roster : Array<string>): Array<object> {
-        roster.map(name => {
-            return { name: name, id: nanoid(3) }
-        })
-        this.everyone = shuffle(roster) as Array<Object>
-        return this.everyone
+        
+        let newArr: Array<object> = [];
+
+        for(let i=0; i < roster.length; i++){
+            newArr.push({ name: name, id: nanoid(3) })
+        }
+
+        this.everyone = shuffle(newArr) as Array<Object>
+        return newArr
     }
 
     pickName(): object {

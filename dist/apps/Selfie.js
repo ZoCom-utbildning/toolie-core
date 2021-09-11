@@ -13,11 +13,12 @@ export default class Selfie {
         this.everyone = everyone;
     }
     shuffle(roster) {
-        roster.map(name => {
-            return { name: name, id: nanoid(3) };
-        });
-        this.everyone = shuffle(roster);
-        return this.everyone;
+        let newArr = [];
+        for (let i = 0; i < roster.length; i++) {
+            newArr.push({ name: name, id: nanoid(3) });
+        }
+        this.everyone = shuffle(newArr);
+        return newArr;
     }
     pickName() {
         if (this.config.excludeName && this.everyone.length) {
