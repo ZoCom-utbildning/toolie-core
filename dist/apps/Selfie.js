@@ -15,7 +15,7 @@ export default class Selfie {
     shuffle(roster) {
         let newArr = [];
         for (let i = 0; i < roster.length; i++) {
-            newArr.push({ name: name, id: nanoid(3) });
+            newArr.push({ name: roster[i], id: nanoid(3) });
         }
         this.everyone = shuffle(newArr);
         return newArr;
